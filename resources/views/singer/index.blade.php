@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('template_title')
-    Singers
-@endsection
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Cantantes</h1>
+@stop
 
 @section('content')
     <div class="container-fluid">
@@ -13,7 +15,9 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
+                                <!--
                                 {{ __('Singers') }}
+                                -->
                             </span>
 
                              <div class="float-right">
@@ -36,9 +40,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id Singers</th>
-									<th >Name</th>
-									<th >Gender</th>
+                                        <th >Name</th>
+                                        <th >Gender</th>
 
                                         <th></th>
                                     </tr>
@@ -48,9 +51,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $singer->id_singers }}</td>
-										<td >{{ $singer->name }}</td>
-										<td >{{ $singer->gender }}</td>
+                                            <td >{{ $singer->name }}</td>
+                                            <td >{{ $singer->gender }}</td>
 
                                             <td>
                                                 <form action="{{ route('singers.destroy', $singer->id) }}" method="POST">

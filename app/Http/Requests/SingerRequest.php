@@ -22,7 +22,6 @@ class SingerRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_singers' => 'required',
 			'name' => 'required|string',
 			'gender' => 'required|string',
         ];
